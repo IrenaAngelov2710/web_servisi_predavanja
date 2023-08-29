@@ -8,16 +8,16 @@
   </head>
   <body>
     <h1><%= naslov %></h1>
-    <img src="image/movies/default.jpg" alt="" width="200" height="200">
+    <!-- <img src="image/movies/default.jpg" alt="" width="200" height="200"> -->
     <% if (movies.length === 0) { %>
     <p>No movies found.</p>
-    <!--so forEach dinamicki ke go prikazime celiot movie array -->
+    <!--so forEach dinamicki ke go prikazeme celiot movie array -->
     <% } else {%> <% movies.forEach(movie =>{%>
     <div class="film">
       <a href="/viewMovies/<%=movie._id%>">
         <h2 class="film-title"><%= movie.title %></h2></a
       >
-      <img src="image/movies/<%= movie.sliki %>" alt="" width="150" height="200">
+      <img src="image/movies/<%= movie.slika %>" alt="" width="200" height="200">
       
       <p><%= movie.year %></p>
       <div class="film-rating">
@@ -37,8 +37,9 @@
       <input type="number" id="year" name="year" />
       <label for="imdbRating">ImdbRating:</label>
       <input type="number" id="imdbRating" name="imdbRating" />
+      <input type="file" name="slika">
       <button class="film-button" type="submit" name="createMovie">
-        Vnesi nov film
+        Enter new movie
       </button>
     </form>
   </body>

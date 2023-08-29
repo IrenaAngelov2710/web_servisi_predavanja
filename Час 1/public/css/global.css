@@ -1,4 +1,93 @@
+body {
+  font-family: sans-serif;
+  background-color: gray;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
 .film {
-    background-color: red;
-    color: white;
-  }
+  background-image: linear-gradient(to right, white, gray);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.onemovie {
+  background-image: linear-gradient(to right, white, gray);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  font-size: 25px;
+}
+
+.film-title {
+  color: blue;
+  text-decoration: none;
+}
+
+.film img {
+  display: block;
+  margin: 0, auto;
+}
+
+.film-title {
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.form-rating {
+  margin-top: 5px;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+form {
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-top: 10px;;
+}
+
+input[type="text"],
+input[type="number"]
+input[type="file"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.film-button {
+  width: 50%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 25%;
+}
+
+.film-button:hover {
+  background-color: gray;
+}
