@@ -55,9 +55,9 @@ const getCity = async (req, res) => {
 
   //* "!cache[req.params.city] || cache[req.params.city].localCache === null" - proveruva dali nema zacuvano podatoci vo kesot za odredeniot grad, ili ako ima podatoci proveruvame dali "localCache === null". Ako uslovot e ispolnet, toa znaci deka podatocite ne s zacuvani ili zacuvanite podatocite se stari i treba da se zamenat
   //* "let data = await fetch(url);" - pravi HTTP baranje do OpenWeather API za da dobie svezi informacii za vremeto i gradot
-  //* "cache[req.params.city] = { ... }" - kreira nov objekt vo kesot za gradot. Vo ovoj objekt se zacuvuvaat novite informacii za bremeto kako "localCache", a "cacheTime" go postavuva momentalnoto vreme
+  //* "cache[req.params.city] = { ... }" - kreira nov objekt vo kesot za gradot. Vo ovoj objekt se zacuvuvaat novite informacii za vremeto kako "localCache", a "cacheTime" go postavuva momentalnoto vreme
   //* "return res.send(cache);" - go vraka celiot kes kako odgovor na baranjeto 
-  //! ako nemame grad vo kesot ili ako gradot so localCache = null  togas da se refetceneme so weather api
+  //! ako nemame grad vo kesot ili ako gradot so localCache = null  togas da se refetceneme so Weather API
   if (!cache[req.params.city] || cache[req.params.city].localCache === null) {
     let data = await fetch(url);
     cache[req.params.city] = {
