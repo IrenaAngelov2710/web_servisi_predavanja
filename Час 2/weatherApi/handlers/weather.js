@@ -17,7 +17,7 @@ let cache = {};
 
 //* "getCity" e asinhrona f-ja sto znaci deka koristi "async" i moze da izvrsuva operacii koi se asinhroni (kako HTTP baranja) bez da go blokiraat izvrsuvanjeto
 //* "key" e API klucot za OpenWeather API, koj ke bide koristen vo formiranjeto na URL-to za baranjeto kon API
-//* "url" e URL-to za baranje koj OpenWeather API. Gradot koj se bara se prenesuva kako parametar vo URL-to
+//* "url" e URL-to za baranje kon OpenWeather API. Gradot koj se bara se prenesuva kako parametar vo URL-to
 const getCity = async (req, res) => {
   let key = "febc5153c18b6e7dde8ad46b218279c8";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${req.params.city}&appid=${key}`;
