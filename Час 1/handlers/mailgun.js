@@ -10,7 +10,7 @@ const mailgun = new Mailgun(formData);
 //* Ova se koristi pri komunikacija so Mailgun API
 const mg = mailgun.client({
   username: "api",
-  key: "<PRIVATE_API_KEY>",
+  key: process.env.PRIVATE_API_KEY,
 });
 
 //* Ovaa f-ja narecena "sendMailGun" sluzi za isprakanje na e-poraki koristejki Mailgun servis
@@ -33,3 +33,5 @@ const sendMailGun = async (options) => {
     emailData
   );
 };
+
+module.exports = sendMailGun;
