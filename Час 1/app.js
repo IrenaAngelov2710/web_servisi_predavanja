@@ -38,7 +38,6 @@ const cookieParser = require("cookie-parser");
 const movies = require("./handlers/movies");
 const authHandler = require("./handlers/authHandler");
 const viewHandler = require("./handlers/viewHandler");
-const moviesHandler = require("./handlers/moviesHandler");
 
 //* Ovaa linija kreira nova ekspress aplikacija so pomos na f-jata "express()"
 //* Aplikacijata se cuva vo promenlivata "app" i ovaa instanca na ekspress objektot ke se koristi za definiranje na ruti za obrabotka na HTTP baranja
