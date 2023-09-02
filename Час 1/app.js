@@ -10,7 +10,7 @@
 //! JWT - JSON WEB TOKEN
 //* sekogash e statless
 //! Logiranje - koga korisnikot se logira, serverot proveruva akreditacija i generira json web token
-//! Avtorizacija - odkoga korisnikot veke se logiral aplikacijata mu go vraka nazad tokenot pak do korisnikot vo forma na kukis ili korisnikot go zacuvuva vo forma na lokalen storage
+//! Avtorizacija - odkoga korisnikot veke se logiral aplikacijata mu go vraka nazad tokenot pak do korisnikot vo forma na cookies ili korisnikot go zacuvuva vo forma na lokalen storage
 //! Verifikacija - koga korisnikot ima rikvest kon serverot so jwt tokenot, serverot prvo go verifikuva potpisot od tokenot potoa serverot proveruva dali korisnikot ima dozvola da ja zeme povratnata usluga od rikvestot ili pobaruvanjeto znaci ako potpisot e validen togas korisnikot uspesno ja dobiva uslugata od rikvestot
 
 /////////////////////////////
@@ -23,7 +23,8 @@
 //? gi povikuvame paketite
 //* Vo ovaa linija kod vo vcituvame modulot "express" koj se koristi za kreiranje na web aplikacii so koristenje na Node.js
 const express = require("express");
-//* Ovaa linija kod e takanarecena "relativna pateka" vo Javascript i se koristi za vcituvanje na modulot ili datotekata na drugo mesto vo proektot. Vo ovoj slucaj go vcituvame modulot "index" od folderot "db", koj pak se naoga vo folderot "pkg" 
+//* Ovaa linija kod e takanarecena "relativna pateka" vo Javascript i se koristi za vcituvanje na modulot ili datotekata na drugo mesto vo proektot
+//* Vo ovoj slucaj go vcituvame modulot "index" od folderot "db", koj pak se naoga vo folderot "pkg" 
 const db = require("./pkg/db/index");
 //* npm install express-jwt
 //* Ovaa linija kod go vcituva modulot "express-jwt" vo programata
@@ -103,7 +104,15 @@ app.use(
 app.post("/api/v1/signup", authHandler.signup);
 app.post("/api/v1/login", authHandler.login);
 
-app.get("/movies", authHandler.middelwareTest, movies.getAll);
+app.post("/forgotPassword", authHandler.forgotPassword);
+app.patch("/resetPassword/:token", authHandler.resetPassword);
+// app.post("/resetPassword/:token", viewHandler.formResetPassword);
+// app.get("/resetPassword/:token", async (req, res) => {
+//   const token = req.params.token;
+//   res.render("resetPassword", { token });
+// });
+
+app.get("/movies", movies.getAll);
 app.get("/movies/:id", movies.getOne);
 app.post("/movies", movies.create);
 app.put("/movies/:id", movies.replace);
